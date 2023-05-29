@@ -1,0 +1,15 @@
+SplitNumbers: [1,2,3,4,5,6,7]
+data:
+  genome:
+    data/genome/c_elegans.fa
+  RNA-seq:
+    read1: data/RNA-seq/reads_001.R1.fastq.gz
+    read2: data/RNA-seq/reads_001.R2.fastq.gz
+  ref_genome:
+    ref_genomic_fna: data/ref_genome/remanei_genomic.fna
+    ref_genomic_gff: data/ref_genome/remanei_genomic.gff
+cpus: 96
+RunPASA_config: /home/thu21/gene/EGAS-ARM/configs/RunPASA.config
+AUGUSTUS_CONFIG_PATH: /home/thu21/gene/EGAS-ARM/configs/AugustusConfig
+species: caenorhabditis
+TargetGenome: c_elegans

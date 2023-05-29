@@ -1,0 +1,5 @@
+#!/bin/bash
+for ((i=1; i<=7; i++))
+do
+ trf data/split_genome/Split-$i.fa 2 7 7 80 10 50 2000 -d  -h 
+done

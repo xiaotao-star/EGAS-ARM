@@ -1,0 +1,2 @@
+#geneID	transcript	cds-parts	phases	chr	strand	start	end	full-length	longest intron	smallest exon	split AA
+At4G31700.TAIR10	At4G31700.2.TAIR10	0,1,2	0,2,2	Chr4	-1	306	1075	true	109	17	G,G

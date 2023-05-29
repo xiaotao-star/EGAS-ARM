@@ -1,0 +1,318 @@
+GeMoMa-1.1.1 (01.02.2016)
+- initial release for paper
+
+GeMoMa-1.1.2. (05.02.2016)
+- GeMoMa bugfix (upstream, downstream sequence for splice site detection)
+- Extractor: new parameter s for selecting transcripts
+- improved Galaxy integration
+
+GeMoMa 1.1.3 (06.06.2016)
+- minor modifications to the Extractor tool 
+
+GeMoMa 1.3 (06.12.2016)
+- ERE: new tool for extracting RNA-seq evidence
+- Extractor: offers options for 
+	- partial gene models
+	- ambiguities
+- GeMoMa:
+	- RNA-seq
+		- defining splice sites
+		- additional feature in GFF and output
+			- transcript intron evidence (tie)
+			- transcript acceptor evidence (tae)
+			- transcript donor evidence (tde)
+			- transcript percentage coverage (tpc)
+			- ...
+	- improved GFF
+	- simplified the command line parameters
+	- IMPORTANT: parameter names changed for some parameters
+- GAF: new tool for filtering and combining different predictions (especially of different reference organisms)
+
+GeMoMa 1.3.1 (09.12.2016)
+- GeMoMa bugfix (finding start/stop codon for very small exons) 
+
+GeMoMa 1.3.2 (18.01.2017)
+- Extractor: new parameter repair for broken transcript annotations
+- GeMoMa: bugfixes (splice site computation)
+
+GeMoMa 1.4 (03.05.2017)
+- AnnotationEvidence: new tool computing tie and tpc for given annotation (gff)
+- CompareTranscripts: new tool comparing predicted and given annotation (gff)
+- Extractor:
+	- reading CDS with no parent tag (cf. discontinuous feature)
+	- automatic recognition of GFF or GTF annotation
+	- Warning if sequences mentioned in the annotation are not included in the reference sequence
+- GeMoMa: 
+	- allowing for multiple intron and coverage files (= using different library types at the same time)
+	- NA instead of "?" for tae, tde, tie, minSplitReads of single coding exon genes
+	- new default values for the parameters: predictions (10 instead of 1) and contig threshold (0.4 instead of 0.9)
+	- bugfix (write pc and minCov if possible for last CDS part in predicted annotation)
+	- bugfix (ref-gene name if no assignment is used)
+	- bugfix (minSplitReads, minCov, tpc, avgCov if no coverage available)
+- GAF:
+	- nested genes on the same strand
+	- bugfix (if nothing passes the filter)
+
+GeMoMa 1.4.1 (30.05.2017)
+- CompareTranscripts: bugfix (NullPointerException)
+- Extractor: reference genome can be .*fa.gz and .*fasta.gz
+- GeMoMa: bugfix (shutdown problem after timeout)
+- modified additional scripts and documentation
+
+GeMoMa 1.4.2 (21.07.2017)
+- automatic searching for available updates
+- AnnotationEvidence: bugfix (tie computation: Arrays.binarysearch does not find first match)
+- Extractor: bugfix (files that are not zipped)
+- GeMoMa: bugfix (tie computation: Arrays.binarysearch does not find first match)
+
+GeMoMa 1.5 (13.02.2018)
+- AnnotationEvidence: add chromosome to output
+- CompareTranscripts: new parameter that allows to remove prefixes introduces by GAF
+- Extractor: new parameter "stop-codon excluded from CDS" that might be used if the annotation does not contain the stop codons
+- ExtractRNASeqEvidence: 
+	- print intron length stats
+	- include program infos in introns.gff3
+- GeMoMa:
+	- new attribute pAA in gff output if query protein is given
+	- include program infos in predicted_annotation.gff3
+	- minor bugfix
+- GAF:
+	- new parameter that allows to specify a prefix for each input gff
+	- collect and print program infos to filtered_prediction.gff3
+	- improved statistics output
+
+GeMoMa 1.5.2 (31.5.2018)
+- GAF:
+	- new parameter that allows to restrict the maximal number of transcript predictions per gene
+	- altered behavior of the evidence filter from percentages to absolute values
+	- bugfix: nested genes 
+	- checking for duplicates in prediction IDs
+- GeMoMa:
+	- warning if RNA-seq data does not match with target genome
+- GeMoMaPipeline: new tool for running the complete GeMoMa pipeline at once allowing multi-threading
+- folder for temporary files of GeMoMa
+
+GeMoMa 1.5.3 (23.07.2018)
+- improved parameter description and presentation
+- GeMoMaPipeline:
+	- removed unnecessary parameters 
+- GeMoMa:
+	- bugfix: reading coverage file
+	- removed parameter genomic (cf. Extractor)
+	- removed protein output (cf. Extractor) 
+- GAF:
+	- bugfix: prefix 
+- Extractor:
+	- new parameter genomic 
+	
+GeMoMa 1.6 (02.04.2019)
+- allow to use mmseqs as alternative to tblastn
+- AnnotationEvidence:
+	- allows to add attributes to the input gff: tie, tpc, AA, start, stop
+	- new parameter for gff output
+- AnnotationFinalizer: new tool for predicting UTRs and renaming predictions
+- GAF:
+	- relative score filter and evidence filter are replaced by a flexible filter that allows to filter by relative score, evidence or other GFF attributes as well as combinations thereof
+	- sorting criteria of the predictions within clusters can now be user-specified
+	- new attribute for genes: combinedEvidence
+	- new attribute for predictions: sumWeight
+	- allows to use gene predictions from all sources, including for instance ab-initio gene predictors, purely RNA-seq based gene prediction and manually curation
+	- bugfix for predictions from multiple reference organisms
+	- improved statistic output
+- GeMoMa
+	- renamed the parameter tblastn results to search results
+	- new parameter for sorting the results of the similarity search (tblastn or mmseqs), if you use mmseqs for the similarity search you have use sort 
+	- new parameter for score of the search results: three options: Trust (as is), ReScore (use aligned sequence, but recompute score), and ReAlign (use detected sequence for realignment and rescore)
+	- bugfix: threshold for introns from multiple files
+
+GeMoMa 1.6.1 (04.06.2019)
+- createGalaxyIntegration.sh: bugfix for GeMoMaPipeline
+- new module CheckIntrons: allowing to create statistics for introns (extracted by ERE)
+- AnnotationFinalizer: bugfix for sequence IDs with large numbers
+- CompareTranscripts: 
+	- bugfix for prefix of ref-gene
+	- allow no transcript info, but making assignment non-optional if a transcript info is set  
+- GAF: bugfix for Galaxy integration
+	- bugfix for filter using specific attributes if no RNA-seq or query proteins was used
+- GeMoMaPipeline:
+	- improved output in case of Exceptions
+	- new parameter "output individual predictions" allows to in- or exclude individual predictions from each reference organism in the final result
+	- new parameter "weight" allows weights for reference species (cf. GAF)
+- ERE: new parameter "minimal mapping quality"
+
+GeMoMa 1.6.2 (17.12.2019)
+- Jstacs changes:
+	- test methods for modules
+	- live protocol for Galaxy
+- new module Denoise: allowing to clean introns extracted by ERE
+- new module NCBIReferenceRetriever: allowing to retrieve data for reference organisms easily from NCBI.
+- GAF:
+	- bugfix for filter using specific attributes if no RNA-seq or query proteins was used
+	- allow to add annotation info (as for instance provided by Phytozome) based on the reference organisms
+- GeMoMa: bugfix for timeout
+- GeMoMaPipeline:
+	- bugfix reporting predicted partial proteins
+	- improved protocol
+	- new default value for query proteins (changed from false to true)
+	- new default value for Ambiguity (changed from EXCEPTION to AMBIGUOUS)
+	
+GeMoMa 1.6.3 (05.03.2020)
+- Jstacs changes:
+	- CLI: bugfix ExpandableParameterSet
+- python wrapper (for *conda)
+- updated tests.sh, run.sh, pipeline.sh
+- renamed Denoise to DenoiseIntrons
+- AnnotationEvidence: write phase (as given) to gff
+- GAF: new parameter: default attributes allows to set attributes that are not included in some gene annotation files
+- GeMoMa: new parameter: static intron length allowing to use dynamic intron length if set to false
+- GeMoMaPipeline: 
+	- bugfix: time-out
+	- improve output
+	- separate parameters for maximum intron length (DenoiseIntrons, GeMoMa)
+	
+GeMoMa 1.6.4 (24.04.2020)
+- improved help section
+- change gff attribute "AA" to "aa"
+- GAF:
+	- bugfix overlapping genes
+	- accelerated computation
+- GeMoMa:
+	- bugfix: if no assignment file is used and protein ID are prefixes of other protein IDs
+	- change GFF attribute AA to aa
+- AnnotationFinalizer: new parameter "name attribute" allowing to decide whether a name attribute or the Parent and ID attributes should be used for renaming
+
+GeMoMa 1.7. (29.07.2020)
+- improved manual including new module and runtime 
+- check whether input files exist before execution
+- partially checking MIME types in CLI before execution
+- changed homepage from http to https
+- new module AddAttribute: allows to add attributes (like functional annotation from InterProScan) to gene annotation files that might be used in GAF or displayed genome browsers like IGV or WebApollo
+- new module SyntenyChecker: creates a table that can be used to create dot plots between the annotation of the target and reference organism
+- changed default value of parameter "tag" from "prediction" to "mRNA"
+- AnnotationEvidence:
+	- additional attributes: avgCov, minCov, nps, ce
+	- changed default value of "annotation output" to true
+	- bugfix: transcript start and end
+- ERE: 
+	- changed default value of coverage to "true" 
+	- new parameter "minimum context": allows to discard introns if all split reads have short aligned contexts
+- Extractor: 
+	- bugfix splitAA if coding exon is very short
+	- improved verbose mode
+	- new parameter "upcase IDs"
+	- new parameter "introns" allowing to extract introns from the reference (only for test cases)
+	- new parameter "discard pre-mature stop" allowing to discard or use transcripts with pre-mature stop
+	- improved handling of corrupt annotations
+- GAF: 
+	- bugfix missing transcripts
+	- slightly changed the default value of "filter"	
+- GeMoMa:
+	- replaced parameter "query proteins" by "protein alignment"
+	- using splitAA for scoring predictions 
+	- new gff attributes: 
+		- ce and rce for the feature prediction indicating the number of coding exons for the prediction and the reference, respectively
+		- nps for the number of premature stop codons (if avoid stop is false)
+	- slightly changed the meaning of the parameter "avoid stop"
+- GeMoMaPipeline:
+	- changed the default value of tblastn to false, hence mmseqs is used as search algorithm
+	- changed the default value of score to ReAlign
+	- remove "--dont-split-seq-by-len" from mmseqs createdb
+	- new optional parameter BLAST_PATH
+	- new optional parameter MMSEQS_PATH
+	- new option to allow for incorporation of external annotation, e.g., from ab-initio gene prediction
+	- new parameter restart allowing to restart the latest GeMoMaPipeline run, which was finished without results, with very similar parameters, e.g., after an exception was thrown (cf. parameter debug)
+
+GeMoMa 1.7.1 (07.09.2020)
+- GeMoMa: 
+	- bugfix if assignment == null
+	- bugfix remove toUpperCase
+- GeMoMaPipeline
+	- Galaxy integration bugfix for hidden parameter restart
+	- hide BLAST_PATH and MMSEQS_PATH from Galaxy integration
+	- improved protocol output if threads=1
+	- add additional test to GeMoMaPipeline
+
+GeMoMa 1.8 (07.10.2021)
+- extended manual
+- new module Analyzer: for benchmarking
+- new module BUSCORecomputer: allowing to recompute BUSCO stats based on geneID instead of transcriptID avoiding to overestimate the number of duplicates
+- AnnotationEvidence
+	- bugfix: gene borders if only one gene is on the contig
+	- discard genes that do not code for a protein
+- AnnotationFinalizer:
+	- new parameter "transfer feature" allowing to keep additional features like UTRs, ...
+	- implemented check of regular expression for prefix
+	- bugfix if score==NA
+- CheckIntrons: introns are not optional
+- ERE: 
+	- new parameters for handling spurious split reads
+	- new parameter for repositioning that is needed for genomes with huge chromosome due to limitations of BAM/SAM
+	- bugfix last intron
+	- improved protocol
+- Extractor:
+	- new parameter for long fasta comment
+	- new parameter identical
+	- more verbose output in case of problems
+	- finding errors if CDS parts have different strands
+	- changed optional intron output
+	- bugfix for exons with DNA but no AA
+- GAF:
+	- new parameter allowing to output the transcript names of redundant predictions as GFF attribute
+	- new parameter "transfer feature" allowing to keep additional features like UTRs, ...
+	- bugfix: missing entries for alternative
+	- changed default value for atf and sorting
+	- implemented check of regular expression for prefix
+	- changed handling of transcript within clusters
+	- changed output order in gff: now for each gene the gene feature is reported first and subsequently the mRNA and CDS features
+- GeMoMa: 
+	- new parameter for replacing unknown AA by X
+	- handling missing GeMoMa.ini.xml
+	- additional GFF attributes: lpm, maxScore, maxGap, bestScore
+	- improved error handling and protocol
+	- changed heuristic for identifying multiple transcripts predictions on one contig/chromosome
+- GeMoMaPipeline:
+	- new parameter "check synteny" allowing to run SyntenyChecker
+	- implemented check of regular expression for prefix
+	- removed unnecessary parameter
+	- improved handling of exceptions
+	- bugfix for stranded RNA-seq evidence
+	- allow re-start only for same version
+	- improved protocol if threads==1
+- SyntenyChecker: implemented check of regular expression for prefix
+
+GeMoMa 1.9 (15.07.2022)
+- improved handling of warnings in Galaxy
+- new modules: Attribute2Table, GFFAttributes and TranscribedCluster
+- AnnotationFinalizer:
+	- new parameters: transfer features, additional source suffix
+	- changed renaming using regex
+	- adding oldID if renaming IDs 
+	- do not re-sort transcripts of a gene
+- BUSCORecomputer:
+	- add FileExistsValidator
+	- extend to polyploid organisms
+	- new result: BUSCO parsed full table
+	- bugfix last duplicated 
+- CombineCoverageFiles:
+	- make it more memory efficient	
+- CombineIntronFiles:
+	- make it more memory efficient
+- GAF:
+	- new parameters allowing gene set specific kmeans using global or local detrending
+	- new parameter "intermediate result" allowing to retrieve intermediate results
+	- new parameter "length difference" allowing to discard predictions that deviate too much from the representative transcript at a locus
+- GeMoMa:
+	- new parameter options for the amount of predictions per reference transcript: STATIC(=default) or DYNAMIC
+	- delete unnecessary parameter "region threshold"
+	- improved verbose output
+	- improve fasta header parsing
+- GeMoMaPipeline:
+	- removed long fasta comment parameter 
+	- improved behaviour if errors occur if restart=true 
+	- shifted prefix from GAF to GeMoMa module were possible 
+	- bug fix: SyntenyChecker if assignment is not used 
+- Extractor:
+	- new category for discarded annotation: non-linear transcripts 
+	- bugfix longest intron=0
+- ExtractRNAseqEvidence:
+	- improved protocol if errors with the repositioning occur 

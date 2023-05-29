@@ -1,0 +1,56 @@
+<listResult>
+<name><className>java.lang.String</className></name><comment><className>java.lang.String</className></comment><datatype><className>de.jstacs.DataType</className><name>LIST</name></datatype><export><className>java.lang.Boolean</className>false</export><list><className>[Lde.jstacs.results.ResultSet;</className><length>1</length><pos val="0"><className>de.jstacs.results.ResultSet</className><resultSet>
+<resStrings><className>[Lde.jstacs.results.Result;</className><length>1</length><pos val="0"><className>de.jstacs.results.TextResult</className><TextResult>
+<name><className>java.lang.String</className>extended annotation</name><comment><className>java.lang.String</className>Result</comment><datatype><className>de.jstacs.DataType</className><name>FILE</name></datatype><mime><className>java.lang.String</className>gff</mime><value><className>de.jstacs.parameters.FileParameter$FileRepresentation</className><fileRepresentation>
+<filename><className>java.lang.String</className>tests/gemoma/intermediate/extended_annotation.gff</filename><compressed><className>java.lang.Boolean</className>false</compressed></fileRepresentation>
+</value><producer><className>java.lang.String</className>AddAttribute</producer><export><className>java.lang.Boolean</className>true</export><extype>null</extype><isTempFile><className>java.lang.Boolean</className>false</isTempFile></TextResult>
+</pos></resStrings></resultSet>
+</pos></list><toolParameters><className>de.jstacs.tools.ToolParameterSet</className><ToolParameterSet>
+<toolName><className>java.lang.String</className>AddAttribute</toolName><parameterSet>
+<set>
+<numberOfParameters><className>java.lang.Integer</className>6</numberOfParameters><parameter><className>de.jstacs.parameters.FileParameter</className><fileParameter>
+<name><className>java.lang.String</className>annotation</name><comment><className>java.lang.String</className>annotation file</comment><datatype><className>de.jstacs.DataType</className><name>FILE</name></datatype><mime><className>java.lang.String</className>gff,gff3</mime><checkMimeType><className>java.lang.Boolean</className>true</checkMimeType><required><className>java.lang.Boolean</className>true</required><isSet><className>java.lang.Boolean</className>true</isSet><errorMessage>null</errorMessage><value><className>de.jstacs.parameters.FileParameter$FileRepresentation</className><fileRepresentation>
+<filename><className>java.lang.String</className>tests/gemoma/intermediate/predicted_annotation.gff</filename><compressed><className>java.lang.Boolean</className>false</compressed></fileRepresentation>
+</value><validator><className>de.jstacs.parameters.validation.FileExistsValidator</className><FileExistsValidator>
+<errorMsg>null</errorMsg></FileExistsValidator>
+</validator></fileParameter>
+</parameter><parameter><className>de.jstacs.parameters.SimpleParameter</className><simpleParameter>
+<name><className>java.lang.String</className>feature</name><comment><className>java.lang.String</className>a feature of the annotation, e.g., gene, transcript or mRNA</comment><datatype><className>de.jstacs.DataType</className><name>STRING</name></datatype><required><className>java.lang.Boolean</className>true</required><isSet><className>java.lang.Boolean</className>false</isSet><errorMessage><className>java.lang.String</className></errorMessage><validator>null</validator><defaultValue><className>java.lang.String</className>mRNA</defaultValue><value><className>java.lang.String</className>mRNA</value></simpleParameter>
+</parameter><parameter><className>de.jstacs.parameters.SimpleParameter</className><simpleParameter>
+<name><className>java.lang.String</className>attribute</name><comment><className>java.lang.String</className>the name of the attribute that is added to the annotation</comment><datatype><className>de.jstacs.DataType</className><name>STRING</name></datatype><required><className>java.lang.Boolean</className>true</required><isSet><className>java.lang.Boolean</className>true</isSet><errorMessage><className>java.lang.String</className></errorMessage><validator>null</validator><defaultValue>null</defaultValue><value><className>java.lang.String</className>newAttribute</value></simpleParameter>
+</parameter><parameter><className>de.jstacs.parameters.FileParameter</className><fileParameter>
+<name><className>java.lang.String</className>table</name><comment><className>java.lang.String</className>a tab-delimited file containing IDs and additional attribute</comment><datatype><className>de.jstacs.DataType</className><name>FILE</name></datatype><mime><className>java.lang.String</className>tabular</mime><checkMimeType><className>java.lang.Boolean</className>false</checkMimeType><required><className>java.lang.Boolean</className>true</required><isSet><className>java.lang.Boolean</className>true</isSet><errorMessage>null</errorMessage><value><className>de.jstacs.parameters.FileParameter$FileRepresentation</className><fileRepresentation>
+<filename><className>java.lang.String</className>tests/gemoma/additionalInfo.txt</filename><compressed><className>java.lang.Boolean</className>false</compressed></fileRepresentation>
+</value><validator><className>de.jstacs.parameters.validation.FileExistsValidator</className><FileExistsValidator>
+<errorMsg>null</errorMsg></FileExistsValidator>
+</validator></fileParameter>
+</parameter><parameter><className>de.jstacs.parameters.SimpleParameter</className><simpleParameter>
+<name><className>java.lang.String</className>ID column</name><comment><className>java.lang.String</className>the ID column in the tab-delimited file</comment><datatype><className>de.jstacs.DataType</className><name>INT</name></datatype><required><className>java.lang.Boolean</className>true</required><isSet><className>java.lang.Boolean</className>true</isSet><errorMessage>null</errorMessage><validator><className>de.jstacs.parameters.validation.NumberValidator</className><NumberValidator>
+<className><className>java.lang.String</className>java.lang.Integer</className><lowerBound><className>java.lang.String</className>0</lowerBound><upperBound><className>java.lang.String</className>2147483647</upperBound></NumberValidator>
+</validator><defaultValue>null</defaultValue><value><className>java.lang.Integer</className>0</value></simpleParameter>
+</parameter><parameter><className>de.jstacs.parameters.SelectionParameter</className><collectionParameter>
+<name><className>java.lang.String</className>type</name><comment><className>java.lang.String</className>type of addition attribute</comment><datatype><className>de.jstacs.DataType</className><name>PARAMETERSET</name></datatype><required><className>java.lang.Boolean</className>true</required><userSelected><className>java.lang.Boolean</className>false</userSelected><errorMessage>null</errorMessage><collection><className>de.jstacs.parameters.SimpleParameterSet</className><parameterSet>
+<set>
+<numberOfParameters><className>java.lang.Integer</className>2</numberOfParameters><parameter><className>de.jstacs.parameters.ParameterSetContainer</className><parameterSetContainer>
+<name><className>java.lang.String</className>VALUES</name><comment>null</comment><datatype><className>de.jstacs.DataType</className><name>PARAMETERSET</name></datatype><parameters><className>de.jstacs.parameters.SimpleParameterSet</className><parameterSet>
+<set>
+<numberOfParameters><className>java.lang.Integer</className>1</numberOfParameters><parameter><className>de.jstacs.parameters.SimpleParameter</className><simpleParameter>
+<name><className>java.lang.String</className>attribute column</name><comment><className>java.lang.String</className>the attribute column in the tab-delimited file</comment><datatype><className>de.jstacs.DataType</className><name>INT</name></datatype><required><className>java.lang.Boolean</className>true</required><isSet><className>java.lang.Boolean</className>true</isSet><errorMessage>null</errorMessage><validator><className>de.jstacs.parameters.validation.NumberValidator</className><NumberValidator>
+<className><className>java.lang.String</className>java.lang.Integer</className><lowerBound><className>java.lang.String</className>0</lowerBound><upperBound><className>java.lang.String</className>2147483647</upperBound></NumberValidator>
+</validator><defaultValue>null</defaultValue><value><className>java.lang.Integer</className>1</value></simpleParameter>
+</parameter></set>
+</parameterSet>
+</parameters></parameterSetContainer>
+</parameter><parameter><className>de.jstacs.parameters.ParameterSetContainer</className><parameterSetContainer>
+<name><className>java.lang.String</className>BINARY</name><comment>null</comment><datatype><className>de.jstacs.DataType</className><name>PARAMETERSET</name></datatype><parameters><className>de.jstacs.parameters.SimpleParameterSet</className><parameterSet>
+<set>
+<numberOfParameters><className>java.lang.Integer</className>0</numberOfParameters></set>
+</parameterSet>
+</parameters></parameterSetContainer>
+</parameter></set>
+</parameterSet>
+</collection><selected><className>java.lang.Integer</className>0</selected><defaultSelected><className>java.lang.Integer</className>0</defaultSelected></collectionParameter>
+</parameter></set>
+</parameterSet>
+</ToolParameterSet>
+</toolParameters><toolName><className>java.lang.String</className>AddAttribute</toolName><date><className>java.lang.Long</className>1654003165726</date></listResult>

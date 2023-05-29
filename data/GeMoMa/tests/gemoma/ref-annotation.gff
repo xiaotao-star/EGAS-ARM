@@ -1,0 +1,11 @@
+Chr4	phytozomev10	mRNA	72	1725	.	-	.	ID=At4G31700.2.TAIR10;Name=At4G31700.2;pacid=19648864;longest=0;Parent=At4G31700.TAIR10
+Chr4	phytozomev10	exon	1699	1725	.	-	.	ID=At4G31700.2.TAIR10.exon.1;Parent=At4G31700.2.TAIR10;pacid=19648864
+Chr4	phytozomev10	five_prime_UTR	1699	1725	.	-	.	ID=At4G31700.2.TAIR10.five_prime_UTR.1;Parent=At4G31700.2.TAIR10;pacid=19648864
+Chr4	phytozomev10	exon	1024	1132	.	-	.	ID=At4G31700.2.TAIR10.exon.2;Parent=At4G31700.2.TAIR10;pacid=19648864
+Chr4	phytozomev10	CDS	1024	1075	.	-	0	ID=At4G31700.2.TAIR10.CDS.1;Parent=At4G31700.2.TAIR10;pacid=19648864
+Chr4	phytozomev10	five_prime_UTR	1076	1132	.	-	.	ID=At4G31700.2.TAIR10.five_prime_UTR.2;Parent=At4G31700.2.TAIR10;pacid=19648864
+Chr4	phytozomev10	exon	642	914	.	-	.	ID=At4G31700.2.TAIR10.exon.3;Parent=At4G31700.2.TAIR10;pacid=19648864
+Chr4	phytozomev10	CDS	642	914	.	-	2	ID=At4G31700.2.TAIR10.CDS.2;Parent=At4G31700.2.TAIR10;pacid=19648864
+Chr4	phytozomev10	exon	72	547	.	-	.	ID=At4G31700.2.TAIR10.exon.4;Parent=At4G31700.2.TAIR10;pacid=19648864
+Chr4	phytozomev10	three_prime_UTR	72	305	.	-	.	ID=At4G31700.2.TAIR10.three_prime_UTR.1;Parent=At4G31700.2.TAIR10;pacid=19648864
+Chr4	phytozomev10	CDS	306	547	.	-	2	ID=At4G31700.2.TAIR10.CDS.3;Parent=At4G31700.2.TAIR10;pacid=19648864

@@ -17,7 +17,7 @@ EGAS-ARM：It is a workflow based on AMR using Snakemake to realize eukaryotic g
 - **snakefiles:** Subworkflow files for this workflow
 - **SoftwareInstallation:** Source code installation of all software related to this workflow (gcc and BiSheng)
 - **data:** Input files and partial output files for the example
-- **lib: ** About some database files (busco) and training models
+- **lib:** About some database files (busco) and training models
 - **configs:** Some configuration files about the workflow software, such as: PASA and Augustus
 
 ## Citations

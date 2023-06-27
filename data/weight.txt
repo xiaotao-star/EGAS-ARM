@@ -1,0 +1,3 @@
+ABINITIO_PREDICTION     augustus  10
+PROTEIN	GeMoMa        10
+TRANSCRIPT      assembler-database.sqlite       15

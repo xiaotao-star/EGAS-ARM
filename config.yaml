@@ -9,8 +9,8 @@ data:
     ref_genomic_fna: data/ref_genome/remanei_genomic.fna
     ref_genomic_gff: data/ref_genome/remanei_genomic.gff
 cpus: 96
-RunPASA_config: /home/thu21/gene/EGAS-ARM/configs/RunPASA.config
-AUGUSTUS_CONFIG_PATH: /home/thu21/gene/EGAS-ARM/configs/AugustusConfig
+RunPASA_config: /path/to/configs/RunPASA.config
+AUGUSTUS_CONFIG_PATH: /path/to/configs/AugustusConfig
 species_rep: Caenorhabditis
 species_au: caenorhabditis
 TargetGenome: c_elegans

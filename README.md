@@ -7,20 +7,21 @@ EGAS-ARM：It is a workflow based on AMR using Snakemake to realize eukaryotic g
 
 - **scripts:**  Script files for this workflow
 - **snakefiles:** Subworkflow files for this workflow
-- **SoftwareInstallation:** Source code installation of all software related to this workflow (gcc and BiSheng)
+- **SoftwareInstallation:** Source code installation of all software related to this workflow 
 - **data:** Input files and partial output files for the example
-- **lib:** About some database files (busco) and training models
+- **lib:** About some busco database files
 - **configs:** Some configuration files about the workflow software, such as: PASA and Augustus
-
-
 
 ## Software installation and preparation
 
 1. Install the required software according to the   **SoftwareInstallation ** directory .
 
-2. Download Caenorhabditis elegans data via Baidu SkyDrive:
+2. Download Caenorhabditis elegans data via Baidu SkyDrive: 
 
-   and the downloaded data corresponds to the EGAS-ARM directory
+   链接：https://pan.baidu.com/s/1yRHazt0_6U02UdW_k72Edw 
+   提取码：oqgk   
+
+   The downloaded data corresponds to the EGAS-ARM directory.
 
 ## Quick Start
 
@@ -30,7 +31,7 @@ EGAS-ARM：It is a workflow based on AMR using Snakemake to realize eukaryotic g
    git clone https://github.com/xiaotao-star/EGAS-ARM.git
    ```
 
-2. Modify the **config.yaml** file:
+2. modify the **config.yaml** file:
 
    ```
    cd EGAS-ARM && vim  config.yaml 
@@ -42,7 +43,7 @@ EGAS-ARM：It is a workflow based on AMR using Snakemake to realize eukaryotic g
    sh GenomeAnnotation.sh
    ```
 
-4. After running EGAS-ARM finished successfully. There are directories with 01_ to 05_ prefix and busco directory.
+4. After running EGAS-ARM finished successfully and there are directories with 01_ to 05_ prefix and busco directory.
 
    The final Annotation file in **05_evm** directories.
    
@@ -50,7 +51,13 @@ EGAS-ARM：It is a workflow based on AMR using Snakemake to realize eukaryotic g
 
 ## Citations
 
-
+1. Holt C, Yandell M. MAKER2: an annotation pipeline and genome-database management tool for second-generation genome projects [J]. BMC bioinformatics, 2011, 12(1):1-14.
+2. Brůna T, Hoff KJ, Lomsadze A, et al. BRAKER2: automatic eukaryotic genome annotation with GeneMark-EP+ and AUGUSTUS supported by a protein database [J]. NAR genomics and bioinformatics, 2021, 3(1):lqaa108.
+3. Köster J, Rahmann S. Snakemake—a scalable bioinformatics workflow engine [J]. Bioinformatics, 2012, 28(19):2520-2.
+4. Seppey M, Manni M, Zdobnov EM. BUSCO: assessing genome assembly and annotation completeness [J]. Gene prediction: methods and protocols, 2019:227-45.
+5. Xia J, Cheng C, Zhou X, et al. Kunpeng 920: The first 7-nm chiplet-based 64-Core ARM SoC for cloud services [J]. IEEE Micro, 2021, 41(5):67-75.
+6. Hoff KJ, Lange S, Lomsadze A, et al. BRAKER1: unsupervised RNA-Seq-based genome annotation with GeneMark-ET and AUGUSTUS [J]. Bioinformatics, 2016, 32(5):767-9.
+7. Yandell M, Ence D. A beginner's guide to eukaryotic genome annotation [J]. Nature Reviews Genetics, 2012, 13(5):329-42.
 
 
 

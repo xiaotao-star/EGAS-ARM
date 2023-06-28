@@ -1,6 +1,6 @@
 
 
-## bedtools Installtion
+## bedtools Installation
 
 ```
 yum install zlib-devel bzip2-devel xz-devel -y

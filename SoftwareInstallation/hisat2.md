@@ -1,4 +1,4 @@
-# hisat2 Iinstall
+# hisat2 installatiion
 
 ```
 unzip hisat2-master.zip

@@ -1,6 +1,6 @@
 
 
-## samtools Installtion
+## samtools Installation
 
 ```
 cd /path/to/SAMTOOLS && tar -zxf samtools-1.11.tar.gz

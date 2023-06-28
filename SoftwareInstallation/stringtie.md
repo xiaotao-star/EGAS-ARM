@@ -1,4 +1,4 @@
-# stringtie
+# stringtie Installation
 
 ```
 tar -xvf stringtie-2.2.1.tar.gz
@@ -20,6 +20,3 @@ mv bzip2-1.0.8 bzip2
 ```
 
 所有错误修改完毕后再返回到stringtie-2.2.1，再继续进行make release 编译。 
-
-
-

@@ -1,6 +1,6 @@
 
 
-## PASA Installtion
+## PASA Installation
 
 ## samtools
 

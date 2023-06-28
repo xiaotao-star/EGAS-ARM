@@ -57,3 +57,18 @@ cmake -DCMAKE_INSTALL_PREFIX=../ ..
 make -j 16
 make install
 ```
+
+## Augustus
+
+```reasonml
+cd /path/to/AUGUSTUS && tar -zxf Augustus-3.3.3.tar.gz && cd Augustus-3.3.3
+export TOOLDIR=/path/to/AUGUSTUS
+export LD_LIBRARY_PATH=/path/to/AUGUSTUS/bamtools/lib64:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/path/to/AUGUSTUS/bamtools/lib64:$LIBRARY_PATH
+
+sed -i 's/\/usr\/include\/bamtools/\/path\/to\/AUGUSTUS\/bamtools\/include\/bamtools/g' `grep -rl "/usr/include/bamtools" ./`
+sed -i 's/\/opt\/augustus/\/path\/to\/AUGUSTUS\/augustus_aarch64/g' Makefile
+
+CC=`which gcc` CXX=`which g++` CXXFLAGS='-O3 -std=c++11 -march=armv8.2-a -mtune=tsv110' CFLAGS='-O3 -march=armv8.2-a -mtune=tsv110' make -j
+make install
+```

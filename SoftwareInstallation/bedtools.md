@@ -1,17 +1,13 @@
 
 
-## samtools Installtion
+## bedtools Installtion
 
 ```
-cd /path/to/SAMTOOLS && tar -zxf samtools-1.11.tar.gz
-cd samtools-1.11
+yum install zlib-devel bzip2-devel xz-devel -y
+tar -zxvf bedtools-2.29.2.tar.gz
+cd bedtools2
 
-autoheader
-autoconf
-sed -i 's/\-O2/\-O3 -march=armv8.2-a -mtune=tsv110/g' `grep -lr "\-O2" ./`
-CC=`which gcc` ./configure --prefix=/path/to/SAMTOOLS --with-htslib=/path/to/HTSLIB
-
-make -j 16
-make install
+make
+export PATH=/path/to/BEDTOOLS/bedtools2/bin:$PATH
 ```
 

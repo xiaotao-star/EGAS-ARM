@@ -43,7 +43,7 @@ EGAS-ARM：It is a workflow based on AMR using Snakemake to realize eukaryotic g
    sh GenomeAnnotation.sh
    ```
 
-4. After running EGAS-ARM finished successfully and there are directories with 01_ to 05_ prefix and busco directory. The final Annotation file in **05_evm** directories.
+4. After running EGAS-ARM finished successfully and there are directories with 01_ to 05_ prefix and busco directory. The final Annotation file in **05_evm** directory.
 
    
 

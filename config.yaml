@@ -1,17 +1,17 @@
-SplitNumbers: [0,1,2,3,4,5,6]
+SplitNumbers: [0,1,2,3,4,5,6]  # Number of data parallel splits,it works for Caenorhabditis elegans ，the different species for different SplitNumbers
 data:
-  genome:
-    data/genome/c_elegans.fa
-  RNA-seq:
-    read1: data/RNA-seq/c_elegans_1.fastq
+  genome:                               # reference genome
+    data/genome/c_elegans.fa  
+  RNA-seq:	              # paired-end RNA-seq
+    read1: data/RNA-seq/c_elegans_1.fastq 
     read2: data/RNA-seq/c_elegans_2.fastq
-  ref_genome:
+  ref_genome:                        # Homologous species
     ref_genomic_fna: data/ref_genome/remanei_genomic.fna
     ref_genomic_gff: data/ref_genome/remanei_genomic.gff
 cpus: 96
-RunPASA_config: /path/to/configs/RunPASA.config
-AUGUSTUS_CONFIG_PATH: /path/to/configs/AugustusConfig
-species_rep: Caenorhabditis
-species_au: caenorhabditis
-TargetGenome: c_elegans
-busco_lib: /path/to/nematoda_odb10
+RunPASA_config: /path/to/configs/RunPASA.config                   # PASA config
+AUGUSTUS_CONFIG_PATH: /path/to/configs/AugustusConfig   # Augustus Config Lib
+species_rep: Caenorhabditis                                                       # name of RepeatMasker species
+species_au: caenorhabditis				 # name of Augustus species
+TargetGenome: c_elegans				 # name of c_elegans species, you can name it by yourself
+busco_lib: /path/to/nematoda_odb10                                        # BUSCO Lib
